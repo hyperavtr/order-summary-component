@@ -1,0 +1,194 @@
+/*COLORS/FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+	/*Primary*/
+	--pale-blue: hsl(225, 100%, 94%);
+	--bright-blue: hsl(245, 75%, 52%);
+
+	/*Neutral*/
+	--very-pale-blue: hsl(225, 100%, 98%);
+	--desaturated-blue: hsl(224, 23%, 55%);
+	--dark-blue: hsl(223, 47%, 23%);
+
+	/*Extra*/
+	--hovered-blue: #746ce9;
+	--very-pale-blue-extra: #efeff9;
+}
+
+.very-pale-blue-colored-text {
+	color: var(--very-pale-blue);
+}
+
+.desaturated-blue-colored-text {
+	color: var(--desaturated-blue);
+	font-weight: 500;
+}
+
+.dark-blue-colored-text {
+	color: var(--dark-blue);
+	font-weight: 900;
+}
+
+.bright-blue-colored-text {
+	color: var(--bright-blue);
+	font-weight: 700;
+}
+
+/*################################*/
+
+/*COMMON*/
+* {
+	box-sizing: border-box;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	height: 100vh;
+	font-family: 'Red Hat Display';
+	background-image: url(./images/pattern-background-desktop.svg);
+	background-repeat: no-repeat;
+	background-size: 100% 50%;
+	background-position: top;
+	background-color: var(--pale-blue);
+}
+
+/*#################################################################*/
+
+/*MAIN CONTENT*/
+
+/*$$$$$$$$$$$$$$$$$$$$ Part 1 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+.container {
+	width: 28rem;
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+	align-items: center;
+	border-radius: 0.8rem;
+	background-color: var(--very-pale-blue);
+}
+
+.container>*:not(img, .plan, .options) {
+	width: 75%;
+}
+
+.container img {
+	border-top-right-radius: 0.8rem;
+	border-top-left-radius: 0.8rem;
+	width: 100%;
+}
+
+h1 {
+	font-size: 1.8rem;
+}
+
+.container>p {
+	margin-top: -2rem;
+	line-height: 1.5rem;
+}
+
+/*----------------- Part 2 -------------------------*/
+.plan {
+	display: grid;
+	grid-template-columns: 0.6fr 0fr 1.7fr;
+	gap: 1rem;
+	width: fit-content;
+	align-items: center;
+	padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+	border-radius: 0.8rem;
+	background-color: var(--very-pale-blue-extra);
+	width: 78%;
+	margin-top: -1.5rem;
+}
+
+.price {
+	display: flex;
+	flex-direction: column;
+	gap: 0.3rem;
+	width: max-content;
+}
+
+.plan a {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.plan a:hover {
+	text-decoration: none;
+	color: var(--hovered-blue);
+}
+
+/*----------------------------------------------*/
+
+/**************** Part 3 **************************/
+.options {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	margin-top: -1rem;
+	margin-bottom: 3rem;
+	width: 78%;
+}
+
+.options a {
+	display: inline-block;
+	text-decoration: none;
+	font-weight: 700;
+}
+
+.first-option {
+	padding: 1rem;
+}
+
+.second-option {
+	width: fit-content;
+}
+
+.second-option:hover {
+	color: var(--dark-blue);
+}
+
+.options li:first-of-type {
+	background-color: var(--bright-blue);
+	border-radius: 0.8rem;
+	box-shadow: 5px 20px 10px var(--pale-blue);
+}
+
+.options li:first-of-type:hover {
+	background-color: var(--hovered-blue);
+}
+
+/************************************************/
+
+/*###############################################*/
+
+/*MEDIA*/
+
+@media only screen and (max-width:486px) {
+	body {
+		background-image: url(./images/pattern-background-mobile.svg);
+	}
+
+	.container {
+		width: 90dvw;
+	}
+
+	.container>h1 {
+		margin-top: -0.7em;
+		font-size: 1.6em;
+	}
+
+	.container>p {
+		line-height: 1.6em;
+	}
+
+	.options {
+		margin-bottom: 2em;
+	}
+}
